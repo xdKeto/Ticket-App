@@ -16,15 +16,13 @@ class _BottomNavbarState extends State<BottomNavbar> {
     const Center(child: Text("Search")),
     const Center(child: Text("Tickets")),
     const Center(child: Text("Profile")),
-   
   ];
 
   // changing index
   int _selectedIndex = 0;
-  void _onItemTapped(int index){
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      
     });
 
     // print("Tapped index is $_selectedIndex");
@@ -33,9 +31,6 @@ class _BottomNavbarState extends State<BottomNavbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text("My Tickets")),
-      ),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -62,6 +57,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
               label: "Profile"),
         ],
       ),
+      backgroundColor: Colors.white,
     );
   }
 }
