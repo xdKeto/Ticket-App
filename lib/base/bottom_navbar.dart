@@ -24,8 +24,6 @@ class _BottomNavbarState extends State<BottomNavbar> {
     setState(() {
       _selectedIndex = index;
     });
-
-    // print("Tapped index is $_selectedIndex");
   }
 
   @override
