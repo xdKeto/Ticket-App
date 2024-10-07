@@ -21,4 +21,8 @@ class AppStyles {
   static TextStyle headLineStyle3 = const TextStyle(
     fontSize: 17,
   );
+
+  static TextStyle headLineStyle4 = const TextStyle(
+    fontSize: 14,
+  );
 }
