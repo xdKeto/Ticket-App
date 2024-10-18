@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class Hotels extends StatelessWidget {
@@ -24,7 +23,8 @@ class Hotels extends StatelessWidget {
             height: 180,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/images/${hotel['image']}"), fit: BoxFit.cover),
+                    image: AssetImage("assets/images/${hotel['image']}"),
+                    fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(12)),
           ),
           SizedBox(

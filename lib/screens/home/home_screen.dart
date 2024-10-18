@@ -8,7 +8,7 @@ import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/utils/app_routes.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
-import 'package:ticket_app/screens/widgets/hotel.dart';
+import 'package:ticket_app/screens/home/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -103,14 +103,13 @@ class HomeScreen extends StatelessWidget {
                   height: 20,
                 ),
                 SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: 
-                  Row(
-                    children:  hotelList
-                          .map((singleHotel) =>
-                              Hotels(hotel: singleHotel))
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: hotelList
+                          .take(2)
+                          .map((singleHotel) => Hotels(hotel: singleHotel))
                           .toList(),
-                  ))
+                    ))
               ],
             ),
           ),
