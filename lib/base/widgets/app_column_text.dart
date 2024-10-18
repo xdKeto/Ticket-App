@@ -7,7 +7,11 @@ class TextColumnLayout extends StatelessWidget {
   final String botText;
   final CrossAxisAlignment alignment;
 
-  const TextColumnLayout({super.key, required this.topText, required this.botText, required this.alignment });
+  const TextColumnLayout(
+      {super.key,
+      required this.topText,
+      required this.botText,
+      required this.alignment});
 
   @override
   Widget build(BuildContext context) {

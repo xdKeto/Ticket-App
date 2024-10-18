@@ -10,7 +10,8 @@ import 'package:ticket_app/base/widgets/text_style_third.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView({super.key, required this.ticket});
+  final bool wholeScreen;
+  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class TicketView extends StatelessWidget {
       height: 200,
       child: Container(
         margin: EdgeInsets.only(
-          right: 16,
+          right: wholeScreen == true ? 0 : 16,
         ),
         child: Column(
           children: [
@@ -79,7 +80,8 @@ class TicketView extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                          width: 100, child: TextStyleFourth(text: ticket['from']['name'])),
+                          width: 100,
+                          child: TextStyleFourth(text: ticket['from']['name'])),
                       Expanded(child: Container()),
                       TextStyleFourth(text: ticket['flying_time']),
                       Expanded(child: Container()),
@@ -129,9 +131,19 @@ class TicketView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextColumnLayout(topText: ticket['date'], botText: "Date", alignment: CrossAxisAlignment.start,),
-                      TextColumnLayout(topText: ticket['departure_time'], botText: "Departure Time", alignment: CrossAxisAlignment.center),
-                      TextColumnLayout(topText: ticket['number'], botText: "Number", alignment: CrossAxisAlignment.end)
+                      TextColumnLayout(
+                        topText: ticket['date'],
+                        botText: "Date",
+                        alignment: CrossAxisAlignment.start,
+                      ),
+                      TextColumnLayout(
+                          topText: ticket['departure_time'],
+                          botText: "Departure Time",
+                          alignment: CrossAxisAlignment.center),
+                      TextColumnLayout(
+                          topText: ticket['number'].toString(),
+                          botText: "Number",
+                          alignment: CrossAxisAlignment.end)
                     ],
                   ),
                 ],
