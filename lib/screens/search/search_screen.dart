@@ -12,7 +12,6 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
       body: ListView(
@@ -28,7 +27,10 @@ class SearchScreen extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          AppTicketTabs(firstTab: "Airplane Tickets", secondTab: "Hotels",),
+          AppTicketTabs(
+            firstTab: "Airplane Tickets",
+            secondTab: "Hotels",
+          ),
           SizedBox(
             height: 25,
           ),
